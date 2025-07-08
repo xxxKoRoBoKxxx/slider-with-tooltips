@@ -1,0 +1,1 @@
+Developing slider with tooltips
