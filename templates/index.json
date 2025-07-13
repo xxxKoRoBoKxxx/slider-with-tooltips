@@ -68,7 +68,7 @@
       }
     },
     "slider_with_tooltips": {
-      "type": "slider-with-tooltips"
+      "type": "slider-with-tooltips",
     },
     "featured_collection": {
       "type": "featured-collection",

@@ -1,27 +1,33 @@
-{{ 'flickity.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer="defer"></script>
 
 <div class="main-carousel" data-flickity='{ 
     "cellAlign": "left", 
     "contain": true, 
     "draggable": false,
   }'>
-  {% for product in section.settings.collection.products %}
-    <div class="carousel-cell">
-      product.
-    </div>
+  {% for block in section.blocks %}
+    <span class="carousel-cell" {{ block.shopify_attributes }}>
+      {{ block.settings.product_image | image_url: width: 300, height: 300 |  image_tag }}
+    </span>
   {% endfor %}
 </div>
 
 {% schema %}
   {
     "name": "Slider with tooltips",
-    "tag": "section",
-    "class": "section",
-    "settings": [
+    "blocks": [
       {
-        "type": "collection",
-        "id": "collection",
-        "label": "Which products to be shown"
+        "type": "products_picture",
+        "name": "Products",
+        "limit": 10,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "product_image",
+            "label": "Image of group of products"
+          }
+        ]
       }
     ]
   }
