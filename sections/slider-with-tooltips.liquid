@@ -1,10 +1,11 @@
 <div class="carousel" data-flickity='{
     "wrapAround": true,
     "draggable": false,
-    "autoPlay": 3000
+    "autoPlay": 3000,
+    "adaptiveHeight": true
   }'>
   {% for block in section.blocks %}
-    <div class="carousel-cell" {{ block.shopify_attributes }}>
+    <div class="carousel-cell" {{ block.shopify_attributes }} style="height: calc(1000vw / {{ block.settings.aspect_ratio }})">
       {{ block.settings.products_image | image_url: width: 1920 | image_tag }}
     </div>
   {% endfor %}
@@ -20,7 +21,6 @@
   }
 
   .carousel-cell {
-    height: calc(100vw / 2.7);
     width: 100%;
     border-radius: 5px;
     counter-increment: carousel-cell;
@@ -34,6 +34,10 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+  }
+
+  .flickity-viewport {
+    transition: height 0.25s;
   }
 </style>
 
@@ -50,6 +54,12 @@
             "type": "image_picker",
             "id": "products_image",
             "label": "Image of group of products"
+          },
+          {
+            "type": "number",
+            "id": "aspect_ratio",
+            "label": "Aspect ratio of featured image",
+            "default": 27
           }
         ]
       }
