@@ -88,31 +88,6 @@
     },
     "slider_with_tooltips": {
       "type": "slider-with-tooltips",
-      "blocks": {
-        "products_picture_bE7kmx": {
-          "type": "products_picture",
-          "settings": {
-            "product_image": "shopify://shop_images/downtown-city-skyline.jpg"
-          }
-        },
-        "products_picture_6FaKkY": {
-          "type": "products_picture",
-          "settings": {
-            "product_image": "shopify://shop_images/chicago-city-lights-at-night.jpg"
-          }
-        },
-        "products_picture_LPJA3q": {
-          "type": "products_picture",
-          "settings": {
-            "product_image": "shopify://shop_images/white-bridge-over-calm-lake.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "products_picture_bE7kmx",
-        "products_picture_6FaKkY",
-        "products_picture_LPJA3q"
-      ],
       "settings": {}
     },
     "featured_collection": {
