@@ -33,7 +33,7 @@
   .carousel-cell img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 </style>
 
@@ -42,13 +42,13 @@
     "name": "Slider with tooltips",
     "blocks": [
       {
-        "type": "slider",
-        "name": "Slider",
+        "type": "products_picture",
+        "name": "Products",
         "limit": 10,
         "settings": [
           {
             "type": "image_picker",
-            "id": "image",
+            "id": "product_image",
             "label": "Image of group of products"
           }
         ]
